@@ -16,6 +16,19 @@ export type CharacterMood =
   | 'playful'
   | 'intense';
 
+export interface GeneratedProject {
+  title: string;
+  builderType: string;
+  whyFits: string;
+  whatYouBuild: string;
+  stack: string[];
+  difficulty: string; // e.g. "★★★☆☆"
+  difficultyRating: number;
+  estimatedTime: string; // e.g. "60–90 minutes"
+  mvpScope: string;
+  skills: string[];
+}
+
 export interface Participant {
   name: string;
   email: string;
@@ -24,6 +37,8 @@ export interface Participant {
   referralCode?: string;
   passId?: string;
   joinedAt?: string;
+  selectedProject?: string;
+  builderType?: string;
 }
 
 export interface IndividualLeaderboardEntry {

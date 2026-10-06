@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DoorIntro } from './components/DoorIntro';
 import { MainHero } from './components/MainHero';
+import { ProjectGenerator } from './components/ProjectGenerator';
 import { ChallengeSection } from './components/challenges/ChallengeSection';
 import { Leaderboard } from './components/Leaderboard';
 import { ReferralTracker } from './components/ReferralTracker';
@@ -10,7 +11,7 @@ import { CampaignEconomics } from './components/CampaignEconomics';
 import { FinalScreen } from './components/FinalScreen';
 import { CharacterCompanion } from './components/CharacterCompanion';
 import { BuilderPassModal } from './components/BuilderPassModal';
-import { Participant } from './types';
+import { Participant, GeneratedProject } from './types';
 import { sounds } from './utils/soundEffects';
 import { Volume2, VolumeX, KeyRound, Sparkles, DoorOpen } from 'lucide-react';
 
@@ -18,6 +19,7 @@ export const App: React.FC = () => {
   const [hasEnteredLeague, setHasEnteredLeague] = useState(false);
   const [isPassModalOpen, setIsPassModalOpen] = useState(false);
   const [registeredParticipant, setRegisteredParticipant] = useState<Participant | null>(null);
+  const [suggestedProject, setSuggestedProject] = useState<GeneratedProject | null>(null);
   const [soundActive, setSoundActive] = useState(true);
   const [currentSection, setCurrentSection] = useState('hero');
 
@@ -26,7 +28,7 @@ export const App: React.FC = () => {
     if (!hasEnteredLeague) return;
 
     const handleScroll = () => {
-      const sections = ['hero', 'challenges', 'leaderboard', 'timeline', 'workshop', 'referrals', 'final-cta'];
+      const sections = ['hero', 'project-generator', 'challenges', 'leaderboard', 'timeline', 'workshop', 'referrals', 'final-cta'];
       const scrollPosition = window.scrollY + 300;
 
       for (const sectionId of sections) {
@@ -95,6 +97,9 @@ export const App: React.FC = () => {
 
           {/* Quick Nav Links (Desktop) */}
           <nav className="hidden md:flex items-center space-x-6 text-xs font-mono font-medium text-[#5E4F41]">
+            <button onClick={() => handleJumpToSection('project-generator')} className="hover:text-amber-700 cursor-pointer transition-colors">
+              WHAT TO BUILD
+            </button>
             <button onClick={() => handleJumpToSection('challenges')} className="hover:text-amber-700 cursor-pointer transition-colors">
               CHALLENGES
             </button>
@@ -145,38 +150,47 @@ export const App: React.FC = () => {
         {/* 1. Main Hero with 327/500 Live Counter */}
         <MainHero
           onUnlockPassClick={() => setIsPassModalOpen(true)}
-          onExploreClick={() => handleJumpToSection('challenges')}
+          onExploreClick={() => handleJumpToSection('project-generator')}
         />
 
-        {/* 2. The Three AI Challenges */}
+        {/* 2. AI First Project Generator (Discovery Bridge) */}
+        <ProjectGenerator
+          onBuildInWorkshopClick={(project) => {
+            setSuggestedProject(project);
+            setIsPassModalOpen(true);
+          }}
+          onExploreChallengesClick={() => handleJumpToSection('challenges')}
+        />
+
+        {/* 3. The Three AI Challenges */}
         <ChallengeSection
           onChallengeCompleted={(challengeId, score) => {
             console.log(`Challenge ${challengeId} completed with score ${score}`);
           }}
         />
 
-        {/* 3. Leaderboards (Individual, College, Referral) */}
+        {/* 4. Leaderboards (Individual, College, Referral) */}
         <Leaderboard />
 
-        {/* 4. 7-Day Journey Visual Timeline */}
+        {/* 5. 7-Day Journey Visual Timeline */}
         <Timeline />
 
-        {/* 5. Day-7 Capstone Workshop */}
+        {/* 6. Day-7 Capstone Workshop */}
         <WorkshopSection
           onUnlockPassClick={() => setIsPassModalOpen(true)}
           isRegistered={!!registeredParticipant}
         />
 
-        {/* 6. Referral System & Squad Builder */}
+        {/* 7. Referral System & Squad Builder */}
         <ReferralTracker
           participant={registeredParticipant}
           onOpenPassModal={() => setIsPassModalOpen(true)}
         />
 
-        {/* 7. Campaign Economics Transparency */}
+        {/* 8. Campaign Economics Transparency */}
         <CampaignEconomics />
 
-        {/* 8. Final Screen with Veer */}
+        {/* 9. Final Screen with Veer */}
         <FinalScreen
           onEnterLeagueClick={() => setIsPassModalOpen(true)}
           onChallengeMeClick={() => handleJumpToSection('challenges')}
@@ -196,6 +210,7 @@ export const App: React.FC = () => {
         onClose={() => setIsPassModalOpen(false)}
         onRegistered={(p) => setRegisteredParticipant(p)}
         initialParticipant={registeredParticipant}
+        suggestedProject={suggestedProject}
       />
 
     </div>

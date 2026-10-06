@@ -37,6 +37,7 @@ export const CharacterCompanion: React.FC<CharacterCompanionProps> = ({ currentS
   // Milestone checkpoints for the vertical journey
   const milestones = [
     { id: 'hero', label: 'Start' },
+    { id: 'project-generator', label: 'Discover' },
     { id: 'challenges', label: '3 Arenas' },
     { id: 'leaderboard', label: 'Ranks' },
     { id: 'timeline', label: '7 Days' },
@@ -91,6 +92,10 @@ export const CharacterCompanion: React.FC<CharacterCompanionProps> = ({ currentS
       hero: [
         'proud',
         "327 builders registered! 500 cap is closing fast."
+      ],
+      'project-generator': [
+        'curious',
+        "What would YOU build with AI? Discover your 60-minute project idea!"
       ],
       challenges: [
         'curious',

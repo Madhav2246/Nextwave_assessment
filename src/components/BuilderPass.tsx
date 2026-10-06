@@ -84,7 +84,9 @@ export const BuilderPass: React.FC<BuilderPassProps> = ({ participant }) => {
         {/* Participant Bio Info */}
         <div className="mt-4 flex justify-between items-start">
           <div className="space-y-1">
-            <div className="text-[10px] font-mono text-[#8C6D53] uppercase font-bold">CADET BUILDER</div>
+            <div className="text-[10px] font-mono text-[#8C6D53] uppercase font-bold">
+              {participant.builderType ? `ROLE: ${participant.builderType}` : "CADET BUILDER"}
+            </div>
             <div className="font-heading text-xl sm:text-2xl font-black text-[#2D2319] tracking-wide">
               {participant.name || "Aarav Sharma"}
             </div>
@@ -94,6 +96,11 @@ export const BuilderPass: React.FC<BuilderPassProps> = ({ participant }) => {
             <div className="text-[11px] font-mono text-[#5E4F41]">
               Graduation: {participant.gradYear || "2026"} • Engineering
             </div>
+            {participant.selectedProject && (
+              <div className="text-[10px] font-mono text-amber-950 font-bold bg-amber-200/60 px-2 py-0.5 rounded-md inline-block truncate max-w-[220px]">
+                PROJECT: {participant.selectedProject}
+              </div>
+            )}
           </div>
 
           {/* QR / Chip */}

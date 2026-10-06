@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { Participant } from '../types';
+import { Participant, GeneratedProject } from '../types';
 import { BuilderPass } from './BuilderPass';
 import { sounds } from '../utils/soundEffects';
 import confetti from 'canvas-confetti';
-import { X, KeyRound, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { X, KeyRound, Sparkles, CheckCircle2, ArrowRight, Flame } from 'lucide-react';
 
 interface BuilderPassModalProps {
   isOpen: boolean;
   onClose: () => void;
   onRegistered: (participant: Participant) => void;
   initialParticipant?: Participant | null;
+  suggestedProject?: GeneratedProject | null;
 }
 
 export const BuilderPassModal: React.FC<BuilderPassModalProps> = ({
@@ -17,6 +18,7 @@ export const BuilderPassModal: React.FC<BuilderPassModalProps> = ({
   onClose,
   onRegistered,
   initialParticipant,
+  suggestedProject,
 }) => {
   const [formData, setFormData] = useState<Participant>(
     initialParticipant || {
@@ -25,6 +27,8 @@ export const BuilderPassModal: React.FC<BuilderPassModalProps> = ({
       college: '',
       gradYear: '2026',
       referralCode: '',
+      selectedProject: suggestedProject?.title,
+      builderType: suggestedProject?.builderType,
     }
   );
 
@@ -100,6 +104,20 @@ export const BuilderPassModal: React.FC<BuilderPassModalProps> = ({
                 Confirm your seat for the Day-7 Grand Workshop (<em>"Build Your First AI Project in 60 Minutes"</em>) to unlock the full competitive league arena and personal squad codes.
               </p>
             </div>
+
+            {formData.selectedProject && (
+              <div className="p-3.5 rounded-2xl bg-amber-100/90 border border-amber-300 flex items-center justify-between text-xs font-mono shadow-xs">
+                <div className="flex items-center space-x-2 truncate">
+                  <Flame size={14} className="text-amber-700 shrink-0" />
+                  <span className="font-bold text-[#3B210B] truncate">PROJECT: {formData.selectedProject}</span>
+                </div>
+                {formData.builderType && (
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-200 text-amber-950 text-[10px] font-black shrink-0 ml-2">
+                    {formData.builderType}
+                  </span>
+                )}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               
