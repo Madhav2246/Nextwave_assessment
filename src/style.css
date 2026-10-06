@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Chakra Petch', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #FAF7F2;
+    color: #2D2319;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.04em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Natural & Warm Ambient Keyframes */
+@keyframes warm-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.15), inset 0 0 15px rgba(217, 119, 6, 0.05);
+  }
+  50% {
+    box-shadow: 0 6px 30px rgba(217, 119, 6, 0.28), inset 0 0 20px rgba(217, 119, 6, 0.1);
+  }
+}
+
+@keyframes character-breathe {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.006);
+  }
+}
+
+@keyframes door-rumble {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, -2px); }
+  80% { transform: translate(1px, 2px); }
+}
+
+@keyframes portal-scale-zoom {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(3.5);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(12);
+    opacity: 0;
+  }
+}
+
+.animate-breathe {
+  animation: character-breathe 4s ease-in-out infinite;
+}
+
+.animate-warm-pulse {
+  animation: warm-pulse 2.8s infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Warm & Peaceful Cards (Replaces dark cyber glass) */
+.warm-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #EADCCB;
+  box-shadow: 0 8px 30px rgba(90, 60, 30, 0.06);
+}
+
+.warm-card:hover {
+  border-color: #D4A855;
+  box-shadow: 0 12px 36px rgba(90, 60, 30, 0.1);
+}
+
+.warm-card-glow {
+  background: #FFFDF9;
+  backdrop-filter: blur(18px);
+  border: 2px solid #D4A855;
+  box-shadow: 0 8px 35px rgba(212, 168, 85, 0.2);
+}
+
+/* Soft Warm Linen Background Texture */
+.warm-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(160, 130, 90, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(160, 130, 90, 0.06) 1px, transparent 1px);
+}
+
+.warm-grid-dense {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(160, 130, 90, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(160, 130, 90, 0.05) 1px, transparent 1px);
+}
+
+/* Warm Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4C3AC;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFA88D;
+}
