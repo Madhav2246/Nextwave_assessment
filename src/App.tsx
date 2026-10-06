@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DoorIntro } from './components/DoorIntro';
 import { MainHero } from './components/MainHero';
 import { ProjectGenerator } from './components/ProjectGenerator';
+import { ResumeScanner } from './components/ResumeScanner';
 import { ChallengeSection } from './components/challenges/ChallengeSection';
 import { Leaderboard } from './components/Leaderboard';
 import { ReferralTracker } from './components/ReferralTracker';
@@ -28,7 +29,7 @@ export const App: React.FC = () => {
     if (!hasEnteredLeague) return;
 
     const handleScroll = () => {
-      const sections = ['hero', 'project-generator', 'challenges', 'leaderboard', 'timeline', 'workshop', 'referrals', 'final-cta'];
+      const sections = ['hero', 'project-generator', 'resume-scanner', 'challenges', 'leaderboard', 'timeline', 'workshop', 'referrals', 'final-cta'];
       const scrollPosition = window.scrollY + 300;
 
       for (const sectionId of sections) {
@@ -96,7 +97,10 @@ export const App: React.FC = () => {
           </div>
 
           {/* Quick Nav Links (Desktop) */}
-          <nav className="hidden md:flex items-center space-x-6 text-xs font-mono font-medium text-[#5E4F41]">
+          <nav className="hidden md:flex items-center space-x-5 text-xs font-mono font-medium text-[#5E4F41]">
+            <button onClick={() => handleJumpToSection('resume-scanner')} className="hover:text-amber-700 cursor-pointer transition-colors">
+              RESUME SCAN
+            </button>
             <button onClick={() => handleJumpToSection('project-generator')} className="hover:text-amber-700 cursor-pointer transition-colors">
               WHAT TO BUILD
             </button>
@@ -150,7 +154,7 @@ export const App: React.FC = () => {
         {/* 1. Main Hero with 327/500 Live Counter */}
         <MainHero
           onUnlockPassClick={() => setIsPassModalOpen(true)}
-          onExploreClick={() => handleJumpToSection('project-generator')}
+          onExploreClick={() => handleJumpToSection('resume-scanner')}
         />
 
         {/* 2. AI First Project Generator (Discovery Bridge) */}
@@ -162,38 +166,47 @@ export const App: React.FC = () => {
           onExploreChallengesClick={() => handleJumpToSection('challenges')}
         />
 
-        {/* 3. The Three AI Challenges */}
+        {/* 3. AI Resume + Career Readiness Scanner ("Where Do You Stand?") */}
+        <ResumeScanner
+          onBuildInWorkshopClick={(project) => {
+            setSuggestedProject(project);
+            setIsPassModalOpen(true);
+          }}
+          onJumpToSection={handleJumpToSection}
+        />
+
+        {/* 4. The Three AI Challenges */}
         <ChallengeSection
           onChallengeCompleted={(challengeId, score) => {
             console.log(`Challenge ${challengeId} completed with score ${score}`);
           }}
         />
 
-        {/* 4. Leaderboards (Individual, College, Referral) */}
+        {/* 5. Leaderboards (Individual, College, Referral) */}
         <Leaderboard />
 
-        {/* 5. 7-Day Journey Visual Timeline */}
+        {/* 6. 7-Day Journey Visual Timeline */}
         <Timeline />
 
-        {/* 6. Day-7 Capstone Workshop */}
+        {/* 7. Day-7 Capstone Workshop */}
         <WorkshopSection
           onUnlockPassClick={() => setIsPassModalOpen(true)}
           isRegistered={!!registeredParticipant}
         />
 
-        {/* 7. Referral System & Squad Builder */}
+        {/* 8. Referral System & Squad Builder */}
         <ReferralTracker
           participant={registeredParticipant}
           onOpenPassModal={() => setIsPassModalOpen(true)}
         />
 
-        {/* 8. Campaign Economics Transparency */}
+        {/* 9. Campaign Economics Transparency */}
         <CampaignEconomics />
 
-        {/* 9. Final Screen with Veer */}
+        {/* 10. Final Screen with Veer */}
         <FinalScreen
           onEnterLeagueClick={() => setIsPassModalOpen(true)}
-          onChallengeMeClick={() => handleJumpToSection('challenges')}
+          onChallengeMeClick={() => handleJumpToSection('workshop')}
         />
 
       </main>

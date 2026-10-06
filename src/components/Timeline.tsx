@@ -9,40 +9,40 @@ export const Timeline: React.FC = () => {
     {
       days: "DAY 1–2",
       phase: "DISCOVER",
-      title: "AI Detective",
-      tagline: "Hallucination Auditing & Logical Defense",
-      desc: "Receive flawed AI-generated production code and architecture designs. Detect subtle concurrency leaks, hallucinated APIs, and security vulnerabilities before shipping.",
-      characterNote: '"Don\'t trust AI blindly. We train you to be the gatekeeper."',
-      status: "COMPLETED / REPLAYABLE",
+      title: "Resume Scanner & Project Discovery",
+      tagline: "Where Do You Stand & What Would You Build?",
+      desc: "Scan your engineering profile with the AI Resume Scanner, diagnose production gaps, and discover your personalized 60-minute project architecture.",
+      characterNote: '"Before you compete, know where you stand and what you want to build."',
+      status: "DISCOVERY LIVE",
       icon: Search,
     },
     {
       days: "DAY 3–4",
-      phase: "CREATE",
-      title: "AI Creator Battle",
-      tagline: "10-Minute Rapid System Prototyping",
-      desc: "Given real-world societal problems (like vernacular prescription OCR for Indian clinics), engineer multimodal LLM workflows that actually deliver useful outputs.",
-      characterNote: '"Anyone can ask ChatGPT for a poem. Builders create architectures people depend on."',
-      status: "CURRENTLY LIVE",
+      phase: "INITIATE",
+      title: "AI Detective & Creator Battle",
+      tagline: "Forensic Auditing & Pipeline Prototyping",
+      desc: "Inspect concurrency bugs in AI Detective and engineer multi-stage multimodal LLM workflows in AI Creator Battle to forge your builder identity.",
+      characterNote: '"Don\'t trust AI blindly. We train you to be the gatekeeper."',
+      status: "ARENAS OPEN",
       icon: Lightbulb,
     },
     {
       days: "DAY 5–6",
       phase: "COMPETE",
-      title: "AI Speed Run & Leaderboards",
-      tagline: "High-Pressure Incident Triage",
-      desc: "Timed 60-second sprints where speed, correctness, and explanation determine who tops the campus leaderboard. Bragging rights for top engineering colleges.",
-      characterNote: '"When production goes down, speed is the only metric that matters."',
+      title: "AI Speed Run & College Leaderboards",
+      tagline: "High-Pressure Incident Triage & Squad Ranks",
+      desc: "Timed 60-second incident sprints, qualified squad referral climbing, and college rivalry on the real-time leaderboard for campus bragging rights.",
+      characterNote: '"When production breaks, speed and composure are the ultimate signals."',
       status: "UPCOMING SPRINT",
       icon: Zap,
     },
     {
       days: "DAY 7",
       phase: "BUILD",
-      title: "Grand Workshop & Final Mission",
+      title: "Grand Workshop & Live Deployment",
       tagline: "Build Your First AI Project in 60 Minutes",
-      desc: "The culmination of the league. Join 500 final-year peers in a live 60-minute build session, write full-stack agentic code, and deploy your live AI project to production.",
-      characterNote: '"This is where your career portfolio actually changes. Don\'t miss this."',
+      desc: "The culmination of the league. Join 500 final-year peers live, write full-stack agentic code, deploy to production on Vercel, and solidify your portfolio.",
+      characterNote: '"Don\'t just attend another workshop. Build evidence of what you can do."',
       status: "THE GRAND FINALE",
       icon: Rocket,
     },
@@ -147,10 +147,10 @@ export const Timeline: React.FC = () => {
               KEY DELIVERABLE
             </div>
             <div className="text-sm font-bold text-[#2D2319]">
-              {selectedDay === 0 && "1 Verified Hallucination Audit + Score"}
-              {selectedDay === 1 && "1 Interactive Prototype Architecture"}
-              {selectedDay === 2 && "Ranked Speed Incident Triage Badge"}
-              {selectedDay === 3 && "Full Production AI Project Deployed"}
+              {selectedDay === 0 && "Verified Career Diagnostic + 60-Min Project Blueprint"}
+              {selectedDay === 1 && "2 Challenge Flaw Audits + Builder Identity"}
+              {selectedDay === 2 && "Ranked Speed Incident Triage Badge + Squad Points"}
+              {selectedDay === 3 && "Full Production AI Project Deployed on Vercel"}
             </div>
             <div className="text-[11px] font-mono text-emerald-800 font-bold pt-1 flex items-center space-x-1">
               <CheckCircle2 size={13} />

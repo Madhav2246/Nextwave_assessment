@@ -38,6 +38,7 @@ export const CharacterCompanion: React.FC<CharacterCompanionProps> = ({ currentS
   const milestones = [
     { id: 'hero', label: 'Start' },
     { id: 'project-generator', label: 'Discover' },
+    { id: 'resume-scanner', label: 'Resume' },
     { id: 'challenges', label: '3 Arenas' },
     { id: 'leaderboard', label: 'Ranks' },
     { id: 'timeline', label: '7 Days' },
@@ -96,6 +97,10 @@ export const CharacterCompanion: React.FC<CharacterCompanionProps> = ({ currentS
       'project-generator': [
         'curious',
         "What would YOU build with AI? Discover your 60-minute project idea!"
+      ],
+      'resume-scanner': [
+        'thinking',
+        "Where do you stand? Let's decode your profile and turn your gaps into upgrades!"
       ],
       challenges: [
         'curious',

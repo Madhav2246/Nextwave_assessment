@@ -31,10 +31,10 @@ export const CampaignEconomics: React.FC = () => {
         {/* 3 Pillar Allocations */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           
-          {/* Pillar 1 */}
+          {/* Pillar 1: Challenge Rewards */}
           <div className="p-5 rounded-2xl bg-[#FFFDF9] border border-amber-300 space-y-2 shadow-xs">
             <div className="flex items-center justify-between">
-              <span className="font-heading font-black text-base text-[#2D2319]">CHALLENGE REWARDS</span>
+              <span className="font-heading font-black text-base text-[#2D2319]">CHALLENGE PRIZES</span>
               <span className="font-mono font-black text-amber-800 text-sm">₹1,000</span>
             </div>
             <div className="text-xs font-mono text-[#5E4F41] space-y-1">
@@ -43,39 +43,39 @@ export const CampaignEconomics: React.FC = () => {
               <div>• AI Speed Run: ₹400</div>
             </div>
             <div className="text-[11px] text-[#8C6D53] pt-1">
-              Rewarding genuine technical reasoning and hallucination audits.
+              Direct merit rewards for top forensic code auditors and rapid hotfix engineers.
             </div>
           </div>
 
-          {/* Pillar 2 */}
+          {/* Pillar 2: Qualified Referral Rewards */}
           <div className="p-5 rounded-2xl bg-[#FFFDF9] border border-amber-300 space-y-2 shadow-xs">
             <div className="flex items-center justify-between">
-              <span className="font-heading font-black text-base text-[#2D2319]">SQUAD REFERRALS</span>
+              <span className="font-heading font-black text-base text-[#2D2319]">QUALIFIED REFERRALS</span>
               <span className="font-mono font-black text-amber-800 text-sm">₹600</span>
             </div>
             <div className="text-xs font-mono text-[#5E4F41] space-y-1">
-              <div>• 1st Squad: ₹249</div>
-              <div>• 2nd Squad: ₹199</div>
-              <div>• 3rd Squad: ₹152</div>
+              <div>• Rank 1: ₹249</div>
+              <div>• Rank 2: ₹199</div>
+              <div>• Rank 3: ₹152</div>
             </div>
             <div className="text-[11px] text-[#8C6D53] pt-1">
-              Tied strictly to peer workshop attendance and verified participation.
+              Tied strictly to verified peer workshop attendance and live active participation.
             </div>
           </div>
 
-          {/* Pillar 3 */}
+          {/* Pillar 3: Marketing */}
           <div className="p-5 rounded-2xl bg-[#FFFDF9] border border-amber-300 space-y-2 shadow-xs">
             <div className="flex items-center justify-between">
-              <span className="font-heading font-black text-base text-[#2D2319]">GROWTH & INFRA</span>
+              <span className="font-heading font-black text-base text-[#2D2319]">MARKETING</span>
               <span className="font-mono font-black text-amber-800 text-sm">₹400</span>
             </div>
             <div className="text-xs font-mono text-[#5E4F41] space-y-1">
-              <div>• Student Community Reach</div>
-              <div>• Cloud Compute Sandbox</div>
-              <div>• Verification Telemetry</div>
+              <div>• Campus Student Outreach</div>
+              <div>• Student Creator Distribution</div>
+              <div>• Engineering Network Growth</div>
             </div>
             <div className="text-[11px] text-[#8C6D53] pt-1">
-              Targeting 500 final-year engineers across Tier-1/2 Indian campuses.
+              Engaging 500 final-year engineers across Tier-1/2 Indian campuses without bloated ad spend.
             </div>
           </div>
 

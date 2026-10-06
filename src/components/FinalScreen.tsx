@@ -49,9 +49,15 @@ export const FinalScreen: React.FC<FinalScreenProps> = ({
             <span className="text-emerald-700">"One workshop."</span>
           </div>
 
-          <h2 className="font-heading text-5xl sm:text-7xl font-black text-[#2D2319] tracking-tight pt-2">
-            "Your move."
-          </h2>
+          <div className="pt-2">
+            <div className="text-xs font-mono text-amber-900 font-bold uppercase tracking-widest mb-1">
+              THE CONCLUDING MANDATE
+            </div>
+            <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl font-black text-[#2D2319] tracking-tight leading-tight">
+              YOU KNOW WHERE YOU STAND.<br />
+              <span className="text-amber-800">NOW BUILD YOUR NEXT LEVEL.</span>
+            </h2>
+          </div>
 
           <p className="text-[#5E4F41] text-sm sm:text-base font-sans max-w-lg mx-auto pt-2 leading-relaxed">
             Don't leave campus with just resume buzzwords. Build working LLM pipelines, prompt architectures, and verified AI projects before the 500 spots close.
@@ -60,7 +66,7 @@ export const FinalScreen: React.FC<FinalScreenProps> = ({
 
         {/* The Two Mandatory CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-          {/* Button 1: ENTER THE BUILDER LEAGUE */}
+          {/* Button 1: JOIN THE AI BUILDER LEAGUE */}
           <button
             onClick={() => {
               sounds.playClick();
@@ -68,20 +74,20 @@ export const FinalScreen: React.FC<FinalScreenProps> = ({
             }}
             className="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-white font-heading font-black text-base sm:text-lg tracking-wider uppercase transition-all shadow-[0_6px_25px_rgba(217,119,6,0.35)] cursor-pointer flex items-center justify-center space-x-3 group hover:scale-105 active:scale-95"
           >
-            <span>ENTER THE BUILDER LEAGUE</span>
+            <span>JOIN THE AI BUILDER LEAGUE</span>
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>
 
-          {/* Button 2: CHALLENGE ME */}
+          {/* Button 2: BUILD YOUR FIRST AI PROJECT IN 60 MINUTES */}
           <button
             onClick={() => {
               sounds.playClick();
               onChallengeMeClick();
             }}
-            className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#FFFDF9] hover:bg-[#FAF6EE] text-[#5C3A1E] font-mono text-sm tracking-wider border-2 border-[#D4A855] hover:border-amber-600 transition-all cursor-pointer flex items-center justify-center space-x-2.5 shadow-md hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#FFFDF9] hover:bg-[#FAF6EE] text-[#5C3A1E] font-heading font-black text-xs sm:text-sm tracking-wider uppercase border-2 border-[#D4A855] hover:border-amber-600 transition-all cursor-pointer flex items-center justify-center space-x-2.5 shadow-md hover:scale-105 active:scale-95"
           >
-            <Swords size={18} className="text-amber-700" />
-            <span>CHALLENGE ME</span>
+            <Sparkles size={17} className="text-amber-700" />
+            <span>BUILD YOUR FIRST AI PROJECT IN 60 MINUTES</span>
           </button>
         </div>
 

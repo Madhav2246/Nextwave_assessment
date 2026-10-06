@@ -29,6 +29,34 @@ export interface GeneratedProject {
   skills: string[];
 }
 
+export interface ResumeCategory {
+  name: string;
+  score: number;
+  explanation: string;
+  improvement: string;
+}
+
+export interface ResumeGap {
+  id: string;
+  title: string;
+  description: string;
+  actionableStep: string;
+  nextMove: string;
+  targetId: string;
+}
+
+export interface ResumeScanResult {
+  candidateName: string;
+  overallScore: number;
+  categories: ResumeCategory[];
+  strongAlignmentRoles: string[];
+  moderateAlignmentRoles: string[];
+  needsEvidenceRoles: string[];
+  companyProfiles: string[];
+  gaps: ResumeGap[];
+  gapClosingProject: GeneratedProject;
+}
+
 export interface Participant {
   name: string;
   email: string;

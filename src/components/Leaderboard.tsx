@@ -58,17 +58,36 @@ export const Leaderboard: React.FC = () => {
     <section id="leaderboard" className="relative py-20 px-4 max-w-6xl mx-auto">
       
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10">
+      <div className="text-center max-w-3xl mx-auto mb-8">
         <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9] border border-[#D4A855] text-amber-900 text-xs font-mono font-bold mb-4 shadow-xs">
           <Trophy size={14} className="text-amber-600" />
-          <span>REAL-TIME COHORT LEADERBOARDS</span>
+          <span>COHORT STANDINGS // HEALTHY CAMPUS RIVALRY</span>
         </div>
         <h2 className="font-heading text-4xl sm:text-5xl font-black text-[#2D2319] tracking-tight">
-          LEADERBOARDS
+          BUILDER LEAGUE
         </h2>
-        <p className="mt-2 text-[#5E4F41] text-sm font-sans">
-          Track individual excellence, college bragging rights, and squad power.
+        <p className="mt-2 text-[#5E4F41] text-sm sm:text-base font-sans">
+          Individual Builders • College Leaderboard • Top Squads
         </p>
+      </div>
+
+      {/* Contextual Your Builder Score Banner */}
+      <div className="mb-6 p-4 rounded-2xl bg-[#FFFDF9] border-2 border-[#D4A855] flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-800 font-bold shrink-0">
+            <Star size={18} />
+          </div>
+          <div>
+            <div className="text-[10px] font-mono text-[#8C6D53] font-bold uppercase">YOUR BUILDER SCORE</div>
+            <div className="font-heading font-black text-base sm:text-lg text-[#2D2319]">
+              READY TO COMPETE // 0 PTS
+            </div>
+          </div>
+        </div>
+        <div className="text-xs font-mono text-emerald-900 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-300 font-bold flex items-center space-x-1.5">
+          <CheckCircle2 size={14} className="text-emerald-700 shrink-0" />
+          <span>Complete challenges in the 3 Arenas to move up the ranks!</span>
+        </div>
       </div>
 
       {/* Tabs & Search Row */}
@@ -80,14 +99,14 @@ export const Leaderboard: React.FC = () => {
               sounds.playClick();
               setActiveTab('individual');
             }}
-            className={`flex-1 sm:flex-none px-5 py-2.5 rounded-xl font-heading text-xs font-black tracking-wider transition-all cursor-pointer flex items-center justify-center space-x-2 ${
+            className={`flex-1 sm:flex-none px-4 sm:px-5 py-2.5 rounded-xl font-heading text-xs font-black tracking-wider transition-all cursor-pointer flex items-center justify-center space-x-1.5 ${
               activeTab === 'individual'
                 ? 'bg-amber-500 text-white shadow-sm'
                 : 'text-[#6E5A47] hover:text-[#2D2319]'
             }`}
           >
             <Trophy size={14} />
-            <span>INDIVIDUAL</span>
+            <span>INDIVIDUAL BUILDERS</span>
           </button>
 
           <button
@@ -95,14 +114,14 @@ export const Leaderboard: React.FC = () => {
               sounds.playClick();
               setActiveTab('college');
             }}
-            className={`flex-1 sm:flex-none px-5 py-2.5 rounded-xl font-heading text-xs font-black tracking-wider transition-all cursor-pointer flex items-center justify-center space-x-2 ${
+            className={`flex-1 sm:flex-none px-4 sm:px-5 py-2.5 rounded-xl font-heading text-xs font-black tracking-wider transition-all cursor-pointer flex items-center justify-center space-x-1.5 ${
               activeTab === 'college'
                 ? 'bg-amber-600 text-white shadow-sm'
                 : 'text-[#6E5A47] hover:text-[#2D2319]'
             }`}
           >
             <School size={14} />
-            <span>COLLEGE</span>
+            <span>COLLEGE LEADERBOARD</span>
           </button>
 
           <button
@@ -110,14 +129,14 @@ export const Leaderboard: React.FC = () => {
               sounds.playClick();
               setActiveTab('referral');
             }}
-            className={`flex-1 sm:flex-none px-5 py-2.5 rounded-xl font-heading text-xs font-black tracking-wider transition-all cursor-pointer flex items-center justify-center space-x-2 ${
+            className={`flex-1 sm:flex-none px-4 sm:px-5 py-2.5 rounded-xl font-heading text-xs font-black tracking-wider transition-all cursor-pointer flex items-center justify-center space-x-1.5 ${
               activeTab === 'referral'
                 ? 'bg-amber-700 text-white shadow-sm'
                 : 'text-[#6E5A47] hover:text-[#2D2319]'
             }`}
           >
             <Users size={14} />
-            <span>REFERRAL</span>
+            <span>TOP SQUADS</span>
           </button>
         </div>
 
